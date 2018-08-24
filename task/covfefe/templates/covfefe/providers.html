@@ -1,7 +1,12 @@
 {% extends "covfefe/base.html" %}
 
 {% block content %}
-
-<h1>Poviders</h1> 
-
+<div class="card border-secondary mb-3" style="max-width: 20rem;">
+    {% for provider in providers %}
+    <h4 class="card-header">{{ provider.provider_name }}</h4>
+    <div class="card-body">
+        <p class="card-text">Added by {{ provider.user }}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
