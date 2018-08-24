@@ -1,14 +1,16 @@
 {% extends "covfefe/base.html" %}
 
 {% block content %}
-<div class="card border-secondary mb-3" style="max-width: 20rem;">
+<div class="d-flex flex-row justify-content-center">
     {% for offer in offers %}
-    <h4 class="card-header">{{ offer.coffee_name }}</h4>
-    <div class="card-body">
-        <p class="card-title">Provider: {{ offer.provider }}</p>
-        <p class="card-title">Price: {{ offer.price }}</p>
-        <p class="card-text">Added on {{ offer.publication_date }}</p>
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+        <h4 class="card-header">{{ offer.coffee_name }}</h4>
+        <div class="card-body">
+            <p class="card-title">Provider: {{ offer.provider }}</p>
+            <p class="card-title">Price: {{ offer.price }}</p>
+            <p class="card-text">Added on {{ offer.publication_date }}</p>
+        </div>
     </div>
-    {% endfor %}
 </div>
+{% endfor %}
 {% endblock %}
