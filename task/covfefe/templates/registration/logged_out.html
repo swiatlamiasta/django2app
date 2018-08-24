@@ -1,0 +1,10 @@
+{% extends "registration/login_base.html" %}
+
+{% block content %}
+<div class="d-flex flex-row justify-content-center">
+    <div class="p-2">
+        <p>Logged out!</p>  
+        <a href="{% url 'login'%}">Click here to login again.</a>
+    </div>
+</div>
+{% endblock %}
