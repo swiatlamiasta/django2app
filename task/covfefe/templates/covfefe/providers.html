@@ -12,6 +12,6 @@
     {% endfor %}
 </div>
 <div class="d-flex flex-row justify-content-center">
-        <button type="button" class="btn btn-primary btn-lg p-2" onclick="location.href = '/add_provider/';">Add new provider</button>
+        <button type="button" class="btn btn-primary btn-lg p-2" onclick="location.href = '{% url 'add_provider' %}';">Add new provider</button>
 </div>
 {% endblock %}
