@@ -1,9 +1,9 @@
 {% extends "covfefe/base.html" %}
 
 {% block content %}
-<div class="d-flex flex-row justify-content-center flex-wrap">
+<div class="d-flex flex-row justify-content-center flex-wrap" style="padding:5px">
     {% for provider in providers %}
-    <div class="card border-secondary mb-3 p-2" style="max-width: 20rem;">
+    <div class="card border-secondary p-2" style="max-width: 20rem; margin:5px">
         <h4 class="card-header">{{ provider.provider_name }}</h4>
         <div class="card-body">
             <p class="card-text">Added by {{ provider.user }}</p>

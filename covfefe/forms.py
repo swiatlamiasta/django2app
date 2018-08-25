@@ -2,6 +2,7 @@ from django import forms
 from .models import Provider, Offer
 
 class ProviderForm(forms.ModelForm):
+    user=1
     class Meta:
         model = Provider
-        fields = ['user','provider_name']
+        fields = ['provider_name']

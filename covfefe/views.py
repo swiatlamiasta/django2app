@@ -19,7 +19,8 @@ def offers(request, template_name='covfefe/offers.html', name='offers'):
 
 @login_required
 def add_provider(request, template_name='covfefe/add_provider.html', name='add_provider'):
-    form = ProviderForm(request.POST or None)
+    user = Provider(user=request.user)
+    form = ProviderForm(request.POST or None, instance=user)
 
     if form.is_valid():
         form.save()
