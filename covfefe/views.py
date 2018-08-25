@@ -3,6 +3,7 @@ from .models import Provider, Offer
 from .forms import ProviderForm
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request, template_name='covfefe/index.html', name='index'):
     return render(request, template_name, {})
 

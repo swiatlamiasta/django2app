@@ -1,7 +1,7 @@
 {% extends "covfefe/base.html" %}
 
 {% block content %}
-<div class="d-flex flex-row justify-content-center">
+<div class="d-flex flex-row justify-content-center flex-wrap">
     {% for offer in offers %}
     <div class="card border-secondary mb-3" style="max-width: 20rem;">
         <h4 class="card-header">{{ offer.coffee_name }}</h4>
