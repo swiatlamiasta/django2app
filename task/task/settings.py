@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for task project.
 
@@ -122,3 +123,6 @@ STATIC_URL = '/static/'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
