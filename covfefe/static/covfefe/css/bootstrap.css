@@ -75,7 +75,7 @@
    line-height: 1.5;
    color: #3E3F3A;
    text-align: left;
-   background-color: #fff;
+   background-color: rgb(221, 221, 221);
  }
  
  [tabindex="-1"]:focus {

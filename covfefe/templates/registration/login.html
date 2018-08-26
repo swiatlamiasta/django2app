@@ -1,41 +1,35 @@
-{% extends "registration/login_base.html" %}
-
+{% extends "registration/login_base.html" %} 
 {% block content %}
-<div class="d-flex flex-row justify-content-center">
-<div class="p-2">
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+<div class="d-flex flex-row justify-content-center flex-wrap" style="padding:5px">
+    <div class="card border-secondary mb-3" style="max-width: 20rem; margin:5px">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="p-2">
+                {% if form.errors %}
+                <p class="text-danger">Your username and password didn't match. Please try again.</p>
+                {% endif %} {% if next %} {% if user.is_authenticated %}
+                <p class="text-danger">Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+                {% else %}
+                <h3 class="card-header">Please log in.</h3>
+                {% endif %} {% endif %}
 
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-  {% else %}
-    <p>Please login to see this page.</p>
-  {% endif %}
-{% endif %}
+                <form method="post" action="{% url 'login' %}" style="padding:5px">
+                    {% csrf_token %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-
-<div>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</div>
-<div>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</div>
-
-<div>
-  <input type="submit" value="login" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
-
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-</div>
+                    <div class="d-flex flex-row justify-content-between" style="padding:5px">
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between" style="padding:5px">
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </div>
+                    <div class="d-flex flex-row justify-content-center" style="padding:5px">
+                        <input type="submit" value="login" class="btn btn-primary btn-lg align-middle" />
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
