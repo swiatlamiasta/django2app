@@ -1,1 +1,1 @@
-Simple Django CRUD application, available at https://django2task.herokuapp.com/index/
+Simple Django application, available at https://django2task.herokuapp.com/index/
