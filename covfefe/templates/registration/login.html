@@ -4,13 +4,12 @@
     <div class="card border-secondary mb-3" style="max-width: 20rem; margin:5px">
         <div class="d-flex flex-row justify-content-center">
             <div class="p-2">
+                <h3 class="card-header">Please log in.</h3>
                 {% if form.errors %}
                 <p class="text-danger">Your username and password didn't match. Please try again.</p>
                 {% endif %} {% if next %} {% if user.is_authenticated %}
                 <p class="text-danger">Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
-                {% else %}
-                <h3 class="card-header">Please log in.</h3>
-                {% endif %} {% endif %}
+                {% else %} {% endif %} {% endif %}
 
                 <form method="post" action="{% url 'login' %}" style="padding:5px">
                     {% csrf_token %}
