@@ -1,5 +1,4 @@
-{% extends "registration/login_base.html" %} 
-{% block content %}
+{% extends "registration/login_base.html" %} {% block content %}
 <div class="d-flex flex-row justify-content-center flex-wrap" style="padding:5px">
     <div class="card border-secondary mb-3" style="max-width: 20rem; margin:5px">
         <div class="d-flex flex-row justify-content-center">
@@ -8,7 +7,8 @@
                 {% if form.errors %}
                 <p class="text-danger">Your username and password didn't match. Please try again.</p>
                 {% endif %} {% if next %} {% if user.is_authenticated %}
-                <p class="text-danger">Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+                <p class="text-danger">Your account doesn't have access to this page. To proceed, please login with an account
+                    that has access.</p>
                 {% else %} {% endif %} {% endif %}
 
                 <form method="post" action="{% url 'login' %}" style="padding:5px">
